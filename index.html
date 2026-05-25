@@ -1,290 +1,53 @@
-<!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lara</title>
-    
-    <!-- Google Fonts: Chakra Petch & Inter -->
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        chakra: ['Chakra Petch', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            red: '#E50914',
-                            dark: '#0f0f13',
-                            card: '#18181f',
-                            accent: '#818cf8',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <style>
-        /* Estilização fina do scrollbar para combinar com o tema dark */
-        ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0f0f13;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #272730;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #e50914;
-        }
-    </style>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <title>Guiminamflix</title>
 </head>
 
-<body class="bg-brand-dark text-gray-100 font-sans min-h-screen flex flex-col justify-between selection:bg-brand-red selection:text-white">
+<body>
+    <header>GUIMINAMFLIX</header>
 
-    <!-- HEADER / CABEÇALHO -->
-    <header class="sticky top-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-gray-800/60 px-6 md:px-12 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
-        <div class="flex items-center gap-8 w-full md:w-auto justify-between md:justify-start">
-            <!-- Logo personalizado com Chakra Petch -->
-            <a href="#" class="font-chakra text-3xl font-extrabold tracking-wider text-brand-red hover:scale-105 transition-transform duration-300">
-                GUIMINAM<span class="text-white">FLIX</span>
+    <section class="chamada">
+        <div class="chamada-texto">
+            <h1>ATRAVÉS DO ARANHAVERSO</h1>
+            <p>#homem-aranha</p>
+        </div>
+
+        <div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/gt_fAE1Eg2Q?si=EEv-tsY_b1B2OwKE"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section class="categoria">
+        <h2>Filmes e séries</h2>
+        <div class="categoria-videos">
+            <a href="https://www.youtube.com/watch?v=cs15QqG6Gjc">
+                <img src="https://img.youtube.com/vi/cs15QqG6Gjc/maxresdefault.jpg" />
             </a>
-            
-            <!-- Links de navegação desktop -->
-            <nav class="hidden md:flex items-center gap-6 text-sm text-gray-400 font-semibold">
-                <a href="#" class="text-white hover:text-brand-red transition-colors">Início</a>
-                <a href="#" class="hover:text-brand-red transition-colors">Filmes</a>
-                <a href="#" class="hover:text-brand-red transition-colors">Séries</a>
-                <a href="#" class="hover:text-brand-red transition-colors">Minha Lista</a>
-            </nav>
+            <a href="https://www.youtube.com/watch?v=nCmIwcycUJ8">
+                <img src="https://img.youtube.com/vi/nCmIwcycUJ8/maxresdefault.jpg" />
+            </a>
+            <a href="https://www.youtube.com/watch?v=FvRmEapoHRc">
+                <img src="https://img.youtube.com/vi/FvRmEapoHRc/maxresdefault.jpg" />
+            </a>
+            <a href="https://www.youtube.com/watch?v=Ipkw_hWW-Hw">
+                <img src="https://img.youtube.com/vi/Ipkw_hWW-Hw/maxresdefault.jpg" />
+            </a>
+            <a href="https://www.youtube.com/watch?v=d4DzMNGoyis">
+                <img src="https://img.youtube.com/vi/d4DzMNGoyis/maxresdefault.jpg" />
+            </a>
         </div>
+    </section>
 
-        <!-- Barra de busca simulada e Perfil -->
-        <div class="flex items-center gap-4 w-full md:w-auto">
-            <div class="relative w-full md:w-64">
-                <input type="text" placeholder="Buscar filmes..." class="w-full bg-brand-card text-xs text-gray-300 pl-10 pr-4 py-2 rounded-full border border-gray-700/50 focus:outline-none focus:border-brand-red transition-all">
-                <svg class="absolute left-3 top-2.5 h-4 w-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                </svg>
-            </div>
-            <div class="h-8 w-8 rounded-full bg-brand-red flex items-center justify-center font-bold text-sm text-white cursor-pointer shadow-lg shadow-brand-red/30 hover:scale-110 transition-transform">
-                G
-            </div>
-        </div>
-    </header>LARIFLIX</header>
-
-    <!-- MAIN / CONTEÚDO PRINCIPAL -->
-    <main class="flex-grow px-4 md:px-12 py-8 max-w-7xl mx-auto w-full space-y-12">
-        
-        <!-- SEÇÃO CHAMADA (HERO BANNER) -->
-        <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 bg-brand-card/40 border border-gray-800 p-6 md:p-8 rounded-2xl backdrop-blur-sm items-center">
-            
-            <!-- Informações do Vídeo em Destaque -->
-            <div class="lg:col-span-5 space-y-6 flex flex-col justify-center">
-                <div class="inline-flex items-center gap-2 bg-brand-red/10 text-brand-red px-3 py-1 rounded-full text-xs font-semibold w-max border border-brand-red/30 uppercase tracking-widest">
-                    🔥 Destaque do Momento
-                </div>
-                
-                <div class="space-y-3">
-                    <h1 id="hero-title" class="font-chakra text-4xl md:text-5xl font-extrabold tracking-tight leading-none text-white transition-all duration-300">
-                        ATRAVÉS DO ARANHAVERSO
-                    </h1>
-                    <p id="hero-tag" class="text-brand-accent text-sm font-semibold tracking-wider uppercase transition-all duration-300">
-                        #homem-aranha #animação #multiverso
-                    </p>
-                </div>
-
-                <p id="hero-desc" class="text-gray-400 text-sm md:text-base leading-relaxed max-w-lg transition-all duration-300">
-                    Miles Morales retorna para o próximo capítulo da saga vencedora do Oscar de Aranhaverso, uma aventura épica que transportará o amigável protetor do Brooklyn através do Multiverso para unir forças com Gwen Stacy e um novo time de Pessoas-Aranha.
-                </p>
-
-                <!-- Botão de Ação Simulada -->
-                <div class="flex items-center gap-4 pt-2">
-                    <button class="bg-brand-red hover:bg-red-700 text-white font-bold px-6 py-3 rounded-lg flex items-center gap-2 shadow-lg shadow-brand-red/40 hover:shadow-brand-red/60 transition-all active:scale-95 text-sm">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                        Assistir Agora
-                    </button>
-                    <button class="bg-gray-800/80 hover:bg-gray-700/80 text-gray-300 font-semibold px-4 py-3 rounded-lg transition-all text-sm border border-gray-700/60">
-                        + Minha Lista
-                    </button>
-                </div>
-            </div>
-
-            <!-- Player de Vídeo Dinâmico (YouTube Iframe) -->
-            <div class="lg:col-span-7 w-full">
-                <div class="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl shadow-black/80 border border-gray-800">
-                    <iframe id="hero-iframe" class="absolute top-0 left-0 w-full h-full"
-                        src="https://www.youtube.com/embed/gt_fAE1Eg2Q?si=EEv-tsY_b1B2OwKE&autoplay=1&mute=1"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                    </iframe>
-                </div>
-            </div>
-
-        </section>
-
-        <!-- SEÇÃO GALERIA / CATEGORIAS -->
-        <section class="space-y-4">
-            <div class="flex items-center justify-between">
-                <div class="space-y-1">
-                    <h2 class="font-chakra text-xl md:text-2xl font-bold tracking-wide flex items-center gap-2">
-                        <span class="h-6 w-1.5 bg-brand-red rounded-full inline-block"></span>
-                        Recomendados para Você
-                    </h2>
-                    <p class="text-xs text-gray-500">Clique em qualquer miniatura para assistir e ver os detalhes acima.</p>
-                </div>
-                
-                <span class="text-xs text-brand-red font-semibold cursor-pointer hover:underline">Ver tudo →</span>
-            </div>
-
-            <!-- Grid responsivo de vídeos -->
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 md:gap-6">
-                
-                <!-- Card 1: Homem-Aranha Sem Volta pra Casa -->
-                <div class="group cursor-pointer bg-brand-card/30 border border-gray-800/80 rounded-xl overflow-hidden hover:border-brand-red/60 transition-all duration-300 hover:-translate-y-1 shadow-md hover:shadow-brand-red/10"
-                     onclick="playVideo('cs15QqG6Gjc', 'HOMEM-ARANHA: SEM VOLTA PARA CASA', '#marvel #ação #multiverso', 'Pela primeira vez na história cinematográfica do Homem-Aranha, nosso herói da vizinhança é desmascarado e não consegue mais separar sua vida normal dos altos riscos de ser um super-herói. Ele pede ajuda ao Doutor Estranho.')">
-                    <div class="relative aspect-video w-full overflow-hidden">
-                        <img src="https://img.youtube.com/vi/cs15QqG6Gjc/maxresdefault.jpg" alt="No Way Home" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=500'"/>
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="p-3 bg-brand-red rounded-full text-white shadow-lg shadow-brand-red/50 scale-75 group-hover:scale-100 transition-transform duration-300">
-                                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="p-3 bg-brand-card/60">
-                        <p class="text-xs font-semibold text-gray-200 truncate group-hover:text-brand-red transition-colors">Sem Volta para Casa</p>
-                        <p class="text-[10px] text-gray-500 font-mono mt-0.5">Marvel Studios</p>
-                    </div>
-                </div>
-
-                <!-- Card 2: Dune Part 2 -->
-                <div class="group cursor-pointer bg-brand-card/30 border border-gray-800/80 rounded-xl overflow-hidden hover:border-brand-red/60 transition-all duration-300 hover:-translate-y-1 shadow-md hover:shadow-brand-red/10"
-                     onclick="playVideo('nCmIwcycUJ8', 'DUNA: PARTE DOIS', '#scifi #épico #deserto', 'Paul Atreides se une a Chani e aos Fremen enquanto busca vingança contra os conspiradores que destruíram sua família. Uma jornada mística e grandiosa pelas areias de Arrakis.')">
-                    <div class="relative aspect-video w-full overflow-hidden">
-                        <img src="https://img.youtube.com/vi/nCmIwcycUJ8/maxresdefault.jpg" alt="Dune 2" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=500'"/>
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="p-3 bg-brand-red rounded-full text-white shadow-lg shadow-brand-red/50 scale-75 group-hover:scale-100 transition-transform duration-300">
-                                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="p-3 bg-brand-card/60">
-                        <p class="text-xs font-semibold text-gray-200 truncate group-hover:text-brand-red transition-colors">Duna: Parte Dois</p>
-                        <p class="text-[10px] text-gray-500 font-mono mt-0.5">Warner Bros.</p>
-                    </div>
-                </div>
-
-                <!-- Card 3: The Batman -->
-                <div class="group cursor-pointer bg-brand-card/30 border border-gray-800/80 rounded-xl overflow-hidden hover:border-brand-red/60 transition-all duration-300 hover:-translate-y-1 shadow-md hover:shadow-brand-red/10"
-                     onclick="playVideo('FvRmEapoHRc', 'THE BATMAN', '#dc #mistério #sombrio', 'Dois anos perseguindo as ruas e instilando medo no coração dos criminosos levaram Bruce Wayne para as profundezas das sombras de Gotham City. Um assassino mira a elite de Gotham com uma série de maquinações sádicas.')">
-                    <div class="relative aspect-video w-full overflow-hidden">
-                        <img src="https://img.youtube.com/vi/FvRmEapoHRc/maxresdefault.jpg" alt="The Batman" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=500'"/>
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="p-3 bg-brand-red rounded-full text-white shadow-lg shadow-brand-red/50 scale-75 group-hover:scale-100 transition-transform duration-300">
-                                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="p-3 bg-brand-card/60">
-                        <p class="text-xs font-semibold text-gray-200 truncate group-hover:text-brand-red transition-colors">The Batman</p>
-                        <p class="text-[10px] text-gray-500 font-mono mt-0.5">DC Studios</p>
-                    </div>
-                </div>
-
-                <!-- Card 4: Interstellar -->
-                <div class="group cursor-pointer bg-brand-card/30 border border-gray-800/80 rounded-xl overflow-hidden hover:border-brand-red/60 transition-all duration-300 hover:-translate-y-1 shadow-md hover:shadow-brand-red/10"
-                     onclick="playVideo('Ipkw_hWW-Hw', 'INTERESTELAR', '#scifi #espaço #nolan', 'As reservas de recursos naturais da Terra estão chegando ao fim. Um grupo de exploradores recebe a missão mais importante da história humana: viajar por um recém-descoberto buraco de minhoca para encontrar um novo lar.')">
-                    <div class="relative aspect-video w-full overflow-hidden">
-                        <img src="https://img.youtube.com/vi/Ipkw_hWW-Hw/maxresdefault.jpg" alt="Interestelar" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=500'"/>
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="p-3 bg-brand-red rounded-full text-white shadow-lg shadow-brand-red/50 scale-75 group-hover:scale-100 transition-transform duration-300">
-                                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="p-3 bg-brand-card/60">
-                        <p class="text-xs font-semibold text-gray-200 truncate group-hover:text-brand-red transition-colors">Interestelar</p>
-                        <p class="text-[10px] text-gray-500 font-mono mt-0.5">Sci-Fi Classics</p>
-                    </div>
-                </div>
-
-                <!-- Card 5: Vingadores Ultimato -->
-                <div class="group cursor-pointer bg-brand-card/30 border border-gray-800/80 rounded-xl overflow-hidden hover:border-brand-red/60 transition-all duration-300 hover:-translate-y-1 shadow-md hover:shadow-brand-red/10"
-                     onclick="playVideo('d4DzMNGoyis', 'VINGADORES: ULTIMATO', '#marvel #épico #herois', 'Após Thanos eliminar metade de toda a vida no universo, os Vingadores sobreviventes precisam se reunir e encontrar um meio de reverter as ações do Titã Louco para restaurar a ordem no cosmos de uma vez por todas.')">
-                    <div class="relative aspect-video w-full overflow-hidden">
-                        <img src="https://img.youtube.com/vi/d4DzMNGoyis/maxresdefault.jpg" alt="Endgame" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=500'"/>
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="p-3 bg-brand-red rounded-full text-white shadow-lg shadow-brand-red/50 scale-75 group-hover:scale-100 transition-transform duration-300">
-                                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="p-3 bg-brand-card/60">
-                        <p class="text-xs font-semibold text-gray-200 truncate group-hover:text-brand-red transition-colors">Vingadores: Ultimato</p>
-                        <p class="text-[10px] text-gray-500 font-mono mt-0.5">Marvel Studios</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-    </main>
-
-    <!-- FOOTER / RODAPÉ -->
-    <footer class="mt-16 bg-[#09090c] border-t border-gray-900 px-6 py-8 text-center text-sm text-gray-500 space-y-3">
-        <p class="font-chakra tracking-widest text-brand-red font-bold text-base">GUIMINAMFLIX © 2026</p>
-        <p class="text-xs">Este é um projeto conceitual desenvolvido com amor para fins de portfólio e personalização visual.</p>
-        <div class="flex justify-center gap-6 text-xs text-gray-400">
-            <a href="#" class="hover:underline">Termos de Uso</a>
-            <a href="#" class="hover:underline">Política de Privacidade</a>
-            <a href="#" class="hover:underline">Ajuda</a>
-        </div>
-    </footer>
-
-    <!-- INTERATIVE SCRIPT (Ação dinâmica ao clicar nos cards) -->
-    <script>
-        function playVideo(youtubeId, title, tags, description) {
-            // Rola suavemente para o topo do destaque
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-
-            // Atualiza o player de vídeo
-            const iframe = document.getElementById('hero-iframe');
-            iframe.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1`;
-
-            // Atualiza os textos de forma elegante com animação rápida de opacidade
-            const titleEl = document.getElementById('hero-title');
-            const tagEl = document.getElementById('hero-tag');
-            const descEl = document.getElementById('hero-desc');
-
-            [titleEl, tagEl, descEl].forEach(el => {
-                el.style.opacity = '0';
-            });
-
-            setTimeout(() => {
-                titleEl.textContent = title;
-                tagEl.textContent = tags;
-                descEl.textContent = description;
-
-                [titleEl, tagEl, descEl].forEach(el => {
-                    el.style.opacity = '1';
-                });
-            }, 300);
-        }
-    </script>
 </body>
 
 </html>
