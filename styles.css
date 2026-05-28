@@ -7,10 +7,10 @@ background: radial-gradient(circle,rgba(92, 17, 130, 1) 24%, rgba(175, 31, 237, 
 }
 
 header {
-    border-bottom: solid 2px rgb(183, 2, 254);
+    border-bottom: solid 2px rgb(108, 14, 145);
     padding: 20px;
     font-size: 32px;
-    color: rgb(42, 122, 228);
+    color: rgb(11, 12, 14);
 }
 
 .chamada {
@@ -52,9 +52,9 @@ p {
 
 .categoria-videos img:hover {
     opacity: 1.0;
-    border: 3px solid green;
+    border: 3px solid rgb(115, 16, 253);
 }
 
 .categoria h2 {
-    color: rgb(42, 122, 228);
+    color: rgb(0, 0, 0);
 }
