@@ -1,7 +1,7 @@
 body {
     color: white;
-    background: rgb(220, 5, 240);
-    margin: 0px;
+    background: #5c1182;
+background: radial-gradient(circle,rgba(92, 17, 130, 1) 24%, rgba(175, 31, 237, 1) 36%, rgba(246, 242, 247, 1) 50%, rgba(130, 20, 204, 1) 74%, rgba(69, 20, 115, 1) 87%, rgba(182, 25, 250, 1) 100%);
     font-family: "Chakra Petch", sans-serif;
     margin-bottom: 100px;
 }
